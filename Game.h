@@ -1,11 +1,9 @@
 //
 // Created by Phillip Henry on 7/28/23.
 //
+#pragma once
 
 #include <iostream>
-
-#ifndef CONNECT4__GAME_H_
-#define CONNECT4__GAME_H_
 
 class Game{
 public:
@@ -14,9 +12,11 @@ public:
     ~Game();
     void PlayMove(int column);
     void RemoveMove(int row, int column);
-    void PrintGame(std::ostream& out);
+    void PrintGame(std::ostream &out);
     void ResetGame();
-    
+    void UpdateGravity();
+    void UpdateGravity(int column);
+    bool CheckWin();
 
 private:
     int turn;
@@ -24,9 +24,4 @@ private:
     int rowCount;
     int columnCount;
     char **gameState;
-    
-    void UpdateGravity();
-    void UpdateGravity(int column);
 };
-
-#endif //CONNECT4__GAME_H_
