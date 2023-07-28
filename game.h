@@ -2,7 +2,7 @@
 // Created by Phillip Henry on 7/28/23.
 //
 
-#include <ostream>
+#include <iostream>
 
 #ifndef CONNECT4__GAME_H_
 #define CONNECT4__GAME_H_
@@ -19,10 +19,14 @@ public:
     
 
 private:
+    int turn;
     int movesPlayed;
     int rowCount;
     int columnCount;
     char **gameState;
+    
+    void UpdateGravity();
+    void UpdateGravity(int column);
 };
 
 #endif //CONNECT4__GAME_H_
